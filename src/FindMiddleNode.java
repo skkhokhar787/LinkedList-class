@@ -1,7 +1,7 @@
 public class FindMiddleNode {
     Node head;
 
-    public class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -72,5 +72,6 @@ public class FindMiddleNode {
 
         list.printList();
         System.out.println("Mid = "+list.midNode(list.head).data);
+
     }
 }

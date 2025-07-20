@@ -34,6 +34,7 @@ public class ReverseLink {
         lastNode.next = newNode;
 
     }
+
     public void printList() {
         ReverseLink.Node currNode = head;
 

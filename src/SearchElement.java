@@ -57,7 +57,7 @@ public class SearchElement {
         }
     }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         SearchElement list = new SearchElement();
 
         list.addFirst(1);

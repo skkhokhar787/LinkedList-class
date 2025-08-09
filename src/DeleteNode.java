@@ -40,6 +40,38 @@ public class DeleteNode {
         System.out.println("null");
     }
 
+    public void removeByPosition(int position) {
+        // Case 1: Empty list
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        // Case 2: Delete head
+        if (position == 0) {
+            head = head.next;
+            return;
+        }
+
+        // Traverse to the node before the one to delete
+        Node current = head;
+        int count = 0;
+
+        while (current != null && count < position - 1) {
+            current = current.next;
+            count++;
+        }
+
+        // Case 3: Position is out of bounds
+        if (current == null || current.next == null) {
+            System.out.println("Position out of bounds.");
+            return;
+        }
+
+        // Skip the node at 'position'
+        current.next = current.next.next;
+    }
+
     public Node deleteByValue(Node head, int target) {
         if (head == null) {
             return null;
@@ -99,6 +131,7 @@ public class DeleteNode {
         list.head =  list.deleteByValue(list.head,7);
         list.removeFirst();
         list.removeLast();
+        list.removeByPosition(2);
         list.printList();
 
     }

@@ -63,6 +63,26 @@ public class DeleteNode {
         return head;
     }
 
+    public void removeFirst() {
+        if (head.next == null) {
+            return;
+        }
+        head = head.next;
+    }
+
+    public void removeLast() {
+        Node currHead = head;
+        if (head == null) {
+            return;
+        }
+        Node currNode = null;
+        while (currHead.next != null) {
+            currNode = currHead;
+            currHead = currHead.next;
+        }
+        currNode.next = null;
+    }
+
     public static void main (String [] args) {
         DeleteNode list = new DeleteNode();
 
@@ -77,7 +97,8 @@ public class DeleteNode {
         list.printList();
 
         list.head =  list.deleteByValue(list.head,7);
-
+        list.removeFirst();
+        list.removeLast();
         list.printList();
 
     }

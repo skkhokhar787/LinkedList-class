@@ -92,7 +92,7 @@ public class SwapNodes {
 
         list.printList();
 
-        list.swapNodes(2,5);
+        list.swapNodes(2, 4);
 
         list.printList();
     }
